@@ -21,6 +21,7 @@ $(function() {
 	$border = $('.border')
 	$header = $('.header')
 	$logo = $('#logo')
+	$logoHeight = $logo.height()
 
 	if (window.outerWidth < 768) {
 	
@@ -33,47 +34,70 @@ $(function() {
 
 	} else {
 
-		$logoHeight = $logo.css("height")
-
 		$header.css("height", $logoHeight)
 
 	}
 
-/****************** Responsive Slider Height *******************/
+/******* #Contact-Info and #tagline Top Margin *******/
 
-	$img = $('#slider > img')
-	$imgHeight = $img.outerHeight(true)
-	$slider = $('#slider')
-	$first = $('#first-slide')
-	$firstSiblings = $first.siblings()
+	$newMargin = $logoHeight / 2;
+	$screenWidth = window.innerWidth
 
-	$slider.css("height", $imgHeight);
-	$firstSiblings.css("display", "none");
+	if ($screenWidth > 992) {
 
-/************* Slider Button Positions **************/	
-
-	$left = $('#left')
-	$right = $('#right')
-	// Find mid point of first image
-	$firstTop = $first.position().top
-	$firstSize = ($first.innerHeight() / 2)
-	$midpoint = $firstTop + ($firstSize)
-	// Find the correct position for the Right button
-	$galleryWidth = $('.gallery').outerWidth()
-	$rightPos = ($galleryWidth - 15)
-
-	$left.css("top", $midpoint)
-	$left.css("left", 0)
-
-	$right.css("top", $midpoint)
-	$right.css("left", $rightPos)
-
-	$left.css("display", "block");
-	$right.css("display", "block");
+		if ($tag.offset().top < $logoHeight) {
+			$tag.css("top", $newMargin);
+			$contact.css("top", $newMargin - 10);
+		}
+	}
 
 
-/******************* Slider Code *********************/
-	
+	/****************** Responsive Slider Height *******************/
+	if (document.title !== "Frasier Homes Testimonies") {
+
+		$img = $('#slider > img')
+		$imgHeight = $img.outerHeight(true)
+		$slider = $('#slider')
+		$first = $('#first-slide')
+		$firstSiblings = $first.siblings()
+
+		$slider.css("height", $imgHeight);
+		$firstSiblings.css("display", "none");
+
+	/************* Slider Button Positions **************/	
+
+		$left = $('#left')
+		$right = $('#right')
+		// Find mid point of first image
+		$firstTop = $first.position().top
+		$firstSize = ($first.innerHeight() / 2)
+		$midpoint = $firstTop + ($firstSize)
+		// Find the correct position for the Right button
+		$galleryWidth = $('.gallery').outerWidth()
+		$rightPos = ($galleryWidth - 15)
+
+		$left.css("top", $midpoint)
+		$left.css("left", 0)
+
+		$right.css("top", $midpoint)
+		$right.css("left", $rightPos)
+
+		$left.css("display", "block");
+		$right.css("display", "block");
 
 
+	/******************* Slider Code *********************/
+	}	
+
+/****************** Testimony Image Resize ********************/
+
+	if (document.title == "Frasier Homes Testimonies") {
+
+	$testImgs = $(".testimonies > div > img")
+	$firstHeight = $testImgs[0].height;
+	$firstWidth = $testImgs[0].width;
+
+	$testImgs.height($firstHeight);
+	$testImgs.width($firstWidth);
+	}
 });

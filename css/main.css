@@ -169,6 +169,19 @@ button.navbar-toggle {
 
 /********* End of Mobile Button *********/
 
+nav ul li a {
+    text-decoration: none;
+    color: #CA9D2C;
+}
+
+nav ul li a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.active a {
+    color: white;
+}
 
 .gallery {
     width: 100%;
@@ -195,6 +208,25 @@ button.navbar-toggle {
 #right {
     position: absolute;
     cursor: pointer;
+}
+
+.testimonies {
+    margin-top: 25px;
+    color: #CA9D2C;
+    font-size: 1.7em;
+}
+
+.testimonies h2 {
+    text-align: center;
+}
+
+.testimonies img {
+    cursor: pointer;
+
+}
+
+.mobile {
+    display: none;
 }
 
 @media screen and (max-width: 768px) {
@@ -250,13 +282,12 @@ button.navbar-toggle {
 
     nav ul li a {
         text-align: right;
-
     }
 
 
 @media screen and (max-width: 992px) {
     #tagline {
-        padding-top: 50px;
+        margin-top: 50px;
     }
 
     #contact-info {
