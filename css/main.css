@@ -225,8 +225,8 @@ nav ul li a:hover {
 
 }
 
-.mobile {
-    display: none;
+span.mobile {
+    display: none !important;
 }
 
 @media screen and (max-width: 768px) {
@@ -244,6 +244,9 @@ nav ul li a:hover {
         padding-top: 25px;
     }
 
+    span.mobile {
+        display: block !important;
+    }
 
     .no-mobile {
         display: none;
@@ -284,6 +287,29 @@ nav ul li a:hover {
         text-align: right;
     }
 
+    .test1 {
+        font-size: .6em;
+    }
+
+    .test1 h2 {
+        font-size: 1.5em;
+    }
+
+    .test2 {
+        font-size: .6em;
+    }
+
+    .test2 h2 {
+        font-size: 1.5em;
+    }
+
+    .test3 {
+        font-size: .6em;
+    }
+
+    .test3 h2 {
+        font-size: 1.5em;
+    }
 
 @media screen and (max-width: 992px) {
     #tagline {
