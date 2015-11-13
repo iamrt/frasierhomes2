@@ -29,7 +29,7 @@ $(function() {
 	
 			$newHeight = $tag.outerHeight(true) + $contact.outerHeight()
 
-			$header.css("height" , $newHeight + 10)
+			$header.css("height" , $newHeight)
 		}
 
 	} else {
